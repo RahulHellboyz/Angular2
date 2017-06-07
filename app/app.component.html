@@ -20,16 +20,9 @@
 
         </div>
 
-        <div class="col-sm-8">
+        <div class="col-sm-8">  
 
-
-            <div class='jumbotron' *ngIf="activeUser">
-                <p>{{message}}</p>
-                <h6>Welcome To Hell!!!</h6>
-                <h2>{{activeUser.name}} <small>{{activeUser.username}}</small></h2>
-                <input class="form-control" [(ngModel)]="activeUser.name">
-            </div>
-
+            <user-profile [user]="activeUser"></user-profile>
 
             <div class='jumbotron' *ngIf="!activeUser">
                 <p>{{message}}</p>
