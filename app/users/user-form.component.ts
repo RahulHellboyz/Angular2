@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { User } from '../shared/models/user';
 
 
@@ -40,14 +40,19 @@ import { User } from '../shared/models/user';
 })
 
 export class UserFormComponent {
+    @Output() userCreated = new EventEmitter();
+
     newUser: User = new User();
 
     active: boolean = true;
 
     onSubmit() {
-        this.newUser=new User();
-        this.active=false;
+        //show the event that the user created
+        this.userCreated.emit({ user: this.newUser });
 
-        setTimeout(()=>this.active=true,0);
+        this.newUser = new User();
+        this.active = false;
+
+        setTimeout(() => this.active = true, 0);
     }
 }
