@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var user_1 = require("./shared/models/user");
 var AppComponent = (function () {
     function AppComponent() {
         this.message = 'Hello everyone!!!';
@@ -18,6 +19,7 @@ var AppComponent = (function () {
             { id: 20, name: 'Jayant D', username: 'JD' },
             { id: 23, name: 'Kirit G', username: 'raju' }
         ];
+        this.activeUser = user_1.User;
     }
     AppComponent.prototype.selectUser = function (user) {
         this.activeUser = user;
