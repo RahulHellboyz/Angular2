@@ -12,16 +12,26 @@ import { Component } from '@angular/core';
     </header>
 
     <main>
-        <div class='jumbotron'>
-            <p>{{message}}</p>
-            <h1>Welcome To Hell!!!</h1>
-        </div>    
 
-        <div *ngIf="users">
-            <div *ngFor="let user of users" >
-                {{user.name}} ({{user.username}})
+        <div class="row">
+
+            <div class="col-sm-4">
+                 <div *ngIf="users">
+                    <ul class="list-group users-list">
+                        <li *ngFor="let user of users" class="list-group-item">{{user.name}} ({{user.username}})</li>
+                    </ul>
+                </div>
             </div>
-        </div>
+
+            <div class="col-sm-8">
+                <div class='jumbotron'>
+                    <p>{{message}}</p>
+                    <h1>Welcome To Hell!!!</h1>
+                </div> 
+            </div>
+
+        </div>        
+
     </main>    
 
     <footer class="text-center">
