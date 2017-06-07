@@ -16,18 +16,33 @@ import { Component } from '@angular/core';
         <div class="row">
 
             <div class="col-sm-4">
+
                  <div *ngIf="users">
                     <ul class="list-group users-list">
-                        <li *ngFor="let user of users" class="list-group-item" (click)="selectUser(user)">{{user.name}} ({{user.username}})</li>
+                        <li  class="list-group-item" 
+                        *ngFor="let user of users" 
+                        (click)="selectUser(user)" 
+                        [class.active]="user===activeUser">{{user.name}} ({{user.username}})</li>
                     </ul>
                 </div>
+
             </div>
 
             <div class="col-sm-8">
-                <div class='jumbotron'>
+
+                <div class='jumbotron' *ngIf="activeUser">
                     <p>{{message}}</p>
-                    <h1>Welcome To Hell!!!</h1>
+                    <h6>Welcome To Hell!!!</h6>
+                    <h2>{{activeUser.name}} <small>{{activeUser.username}}</small></h2>
                 </div> 
+
+                <div class='jumbotron' *ngIf="!activeUser">
+                    <p>{{message}}</p>
+                    <h6>Welcome To Hell!!!</h6>
+                    <span class="glyphicon glyphicon-hand-left"></span>
+                    <h2>Choose a User</h2>
+                </div> 
+
             </div>
 
         </div>        
@@ -39,7 +54,13 @@ import { Component } from '@angular/core';
     </footer>
     `,
     styles: [`
-    .jumbotron {box-shadow : 0 2px 0 rgba(0,0,0,0.2);}
+    .users-list li{
+        cursor:pointer;
+    }
+
+    .jumbotron .glyphicon{
+        font-size:80px;
+    }
     `]
 })
 
