@@ -35,7 +35,8 @@ import {User} from './shared/models/user'
                 <div class='jumbotron' *ngIf="activeUser">
                     <p>{{message}}</p>
                     <h6>Welcome To Hell!!!</h6>
-                    <h2>{{activeUser.name}} <small>{{activeUser.username}}</small></h2>                    
+                    <h2>{{activeUser.name}} <small>{{activeUser.username}}</small></h2> 
+                    <input class="form-control" [(ngModel)]="activeUser.name" >                   
                 </div>  
                       
 
