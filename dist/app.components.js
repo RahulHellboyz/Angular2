@@ -7,7 +7,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var user_1 = require("./shared/models/user");
 var AppComponent = (function () {
     function AppComponent() {
         this.message = 'Hello everyone!!!';
@@ -19,7 +18,6 @@ var AppComponent = (function () {
             { id: 20, name: 'Jayant D', username: 'JD' },
             { id: 23, name: 'Kirit G', username: 'raju' }
         ];
-        this.activeUser = user_1.User;
     }
     AppComponent.prototype.selectUser = function (user) {
         this.activeUser = user;
@@ -30,8 +28,8 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n    <header>\n        <nav class=\"navbar navbar-inverse\">\n            <div class=\"navbar-header\">\n                <a href=\"/\" class=\"navbar-brand\">My Hell!!!</a>\n            </div>\n        </nav>\n    </header>\n\n    <main>\n\n        <div class=\"row\">\n\n            <div class=\"col-sm-4\">\n\n                 <div *ngIf=\"users\">\n                    <ul class=\"list-group users-list\">\n                        <li  class=\"list-group-item\" \n                        *ngFor=\"let user of users\" \n                        (click)=\"selectUser(user)\" \n                        [class.active]=\"user===activeUser\">{{user.name}} ({{user.username}})</li>\n                    </ul>\n                </div>\n\n            </div>\n\n            <div class=\"col-sm-8\">\n\n                <div class='jumbotron' *ngIf=\"activeUser\">\n                    <p>{{message}}</p>\n                    <h6>Welcome To Hell!!!</h6>\n                    <h2>{{activeUser.name}} <small>{{activeUser.username}}</small></h2>\n                </div> \n\n                <div class='jumbotron' *ngIf=\"!activeUser\">\n                    <p>{{message}}</p>\n                    <h6>Welcome To Hell!!!</h6>\n                    <span class=\"glyphicon glyphicon-hand-left\"></span>\n                    <h2>Choose a User</h2>\n                </div> \n\n            </div>\n\n        </div>        \n\n    </main>    \n\n    <footer class=\"text-center\">\n        CopyRight &copy; 2017\n    </footer>\n    ",
-        styles: ["\n    .users-list li{\n        cursor:pointer;\n    }\n\n    .jumbotron .glyphicon{\n        font-size:80px;\n    }\n    "]
+        template: "\n    <header>\n        <nav class=\"navbar navbar-inverse\">\n            <div class=\"navbar-header\">\n                <a href=\"/\" class=\"navbar-brand\">My Hell!!!</a>\n            </div>\n        </nav>\n    </header>\n\n    <main>\n\n        <div class=\"row\">\n\n            <div class=\"col-sm-4\">\n\n                 <div *ngIf=\"users\">\n                    <ul class=\"list-group users-list\">\n                        <li  class=\"list-group-item\" \n                        *ngFor=\"let user of users\" \n                        (click)=\"selectUser(user)\" \n                        [class.active]=\"user===activeUser\">{{user.name}} ({{user.username}})</li>\n                    </ul>\n                </div>\n\n            </div>\n\n            <div class=\"col-sm-8\">     \n\n                \n                <div class='jumbotron' *ngIf=\"activeUser\">\n                    <p>{{message}}</p>\n                    <h6>Welcome To Hell!!!</h6>\n                    <h2>{{activeUser.name}} <small>{{activeUser.username}}</small></h2>                    \n                </div>  \n                      \n\n                 <div class='jumbotron' *ngIf=\"!activeUser\">\n                    <p>{{message}}</p>\n                    <h6>Welcome To Hell!!!</h6>\n                    <span class=\"glyphicon glyphicon-hand-left\"></span>\n                    <h2>Choose a User</h2>\n                </div>       \n\n            </div>\n\n        </div>        \n\n    </main>    \n\n    <footer class=\"text-center\">\n        CopyRight &copy; 2017\n    </footer>\n    ",
+        styles: ["\n    .users-list li{\n        cursor:pointer;\n    }\n\n    .jumbotron .glyphicon{\n        font-size:80px;\n    }   \n\n    "]
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;

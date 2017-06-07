@@ -29,20 +29,22 @@ import {User} from './shared/models/user'
 
             </div>
 
-            <div class="col-sm-8">
+            <div class="col-sm-8">     
 
+                
                 <div class='jumbotron' *ngIf="activeUser">
                     <p>{{message}}</p>
                     <h6>Welcome To Hell!!!</h6>
-                    <h2>{{activeUser.name}} <small>{{activeUser.username}}</small></h2>
-                </div> 
+                    <h2>{{activeUser.name}} <small>{{activeUser.username}}</small></h2>                    
+                </div>  
+                      
 
-                <div class='jumbotron' *ngIf="!activeUser">
+                 <div class='jumbotron' *ngIf="!activeUser">
                     <p>{{message}}</p>
                     <h6>Welcome To Hell!!!</h6>
                     <span class="glyphicon glyphicon-hand-left"></span>
                     <h2>Choose a User</h2>
-                </div> 
+                </div>       
 
             </div>
 
@@ -61,7 +63,8 @@ import {User} from './shared/models/user'
 
     .jumbotron .glyphicon{
         font-size:80px;
-    }
+    }   
+
     `]
 })
 
@@ -78,7 +81,7 @@ export class AppComponent {
         { id: 23, name: 'Kirit G', username: 'raju' }
     ];
 
-    activeUser=User;
+    activeUser;
 
     selectUser(user){       
         this.activeUser=user;        
